@@ -1,6 +1,6 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
-import sqlite3
+import psycopg2
 
 class MainApp(MDApp):
     def build(self):
@@ -8,33 +8,49 @@ class MainApp(MDApp):
         self.theme_cls.primary_palette = "BlueGray"
 
         # Create database or connect to one
-        conn = sqlite3.connect('first_db.db')
-
+        conn = psycopg2.connect(
+        host = "ec2-44-193-188-118.compute-1.amazonaws.com",
+        database = "d33plvmask99cq",
+        user = "edcijjsianoskw",
+        password = "395d33c3628a669d36af2bf20d1b3089055d268e0990db9f092ef4013f44353b",
+        port = "5432",
+        )
         # Create a cursor
         c = conn.cursor()
         # Create a table
         c.execute("""CREATE TABLE if not exists customers(
-            name text
-        )
+            name TEXT);
         """)
+        # check if table is created 
+        # c.execute("SELECT * FROM customers")
+        # print(c.description)
+
         # Commit changes
         conn.commit()
         # close connection
         conn.close()
 
-        return Builder.load_file('test_mysql.kv')
+        return Builder.load_file('db_postgress.kv')
 
     def submit(self):
-                conn = sqlite3.connect('first_db.db')
+                conn = psycopg2.connect(
+                host = "ec2-44-193-188-118.compute-1.amazonaws.com",
+                database = "d33plvmask99cq",
+                user = "edcijjsianoskw",
+                password = "395d33c3628a669d36af2bf20d1b3089055d268e0990db9f092ef4013f44353b",
+                port = "5432",
+                )
 
                 # Create a cursor
                 c = conn.cursor()
                 # Add record
-                c.execute("INSERT INTO customers VALUES (:first)",
-                {
-                    'first': self.root.ids.word_input.text,
-                }
-                )
+
+                sql_command = "INSERT INTO customers (name) VALUES (%s)"
+                values = (self.root.ids.word_input.text,)
+
+                c.execute(sql_command, values)
+
+
                 # Add a sms
                 self.root.ids.word_label.text = f'{self.root.ids.word_input.text} Added'
 
@@ -46,7 +62,13 @@ class MainApp(MDApp):
                 conn.close()
 
     def records(self):
-                        conn = sqlite3.connect('first_db.db')
+                        conn = psycopg2.connect(
+                        host = "ec2-44-193-188-118.compute-1.amazonaws.com",
+                        database = "d33plvmask99cq",
+                        user = "edcijjsianoskw",
+                        password = "395d33c3628a669d36af2bf20d1b3089055d268e0990db9f092ef4013f44353b",
+                        port = "5432",
+                        )
 
                         # Create a cursor
                         c = conn.cursor()
