@@ -1,0 +1,24 @@
+
+
+<MyLayout>
+# this is the way earlier used another way is to manipulate from py file
+
+    # canvas.before:
+    #     Color:
+    #         rgba: (1, 1, 1, 1)
+    #     Rectangle:
+    #         pos: self.pos
+    #         size: self.size
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 50
+        spacing: 20
+
+        Button:
+            text: "Hello World!"
+
+        Button:
+            text: "Goodby World!"
