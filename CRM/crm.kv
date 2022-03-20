@@ -1,0 +1,255 @@
+<MyLayout>
+# this is the way earlier used another way is to manipulate from py file
+
+    # canvas.before:
+    #     Color:
+    #         rgba: (1, 1, 1, 1)
+    #     Rectangle:
+    #         pos: self.pos
+    #         size: self.size
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 50
+        # spacing: 20
+
+
+        GridLayout:
+            cols: 2
+            # rows: 14
+            padding: 10
+            spacing: 10
+
+            Label:
+                id: first_name_label
+                text: "First Name"
+                color: 0,0,0,1
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            
+            TextInput:
+                id: first_name_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: last_name_label
+                text: "Last Name"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            TextInput:
+                id: last_name_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: address1_label
+                text: "Address 1"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: address1_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: address2_label
+                text: "Address 2"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: address2_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: city_label
+                text: "City"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: city_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: state_label
+                text: "State"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: state_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: zipcode_label
+                text: "ZipCode"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: zipcode_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: country_label
+                text: "Country"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: country_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: phone_label
+                text: "Phone"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: phone_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: email_label
+                text: "Email"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: email_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: paymentmethod_label
+                text: "Payment Method"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: paymentmethod_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: discountcode_label
+                text: "Discount Code"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: discountcode_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Label:
+                id: pricepaid_label
+                text: "Price Paid"
+                color: 0,0,0,1
+
+                font_size: 20
+                size_hint: (None, None)
+                height: 30
+                width: 300
+            
+            TextInput:
+                id: pricepaid_input
+                multiline: False
+                size_hint: (None, None)
+                height: 30
+                width: 300
+
+            Button:
+                size_hint: (.2, .2)
+                font_size: 20
+                text: "Add Customer Data"
+                # on_press: root.math_sign("%")
+            Button:
+                size_hint: (.2, .2)
+                font_size: 20
+                text: "Clear Customer Data"
+                on_press: root.clear()

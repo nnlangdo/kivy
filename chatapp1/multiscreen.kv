@@ -1,0 +1,165 @@
+<RLabel@ButtonBehavior+Label>:
+WindowManager:
+    LoginUI:
+    RegisterUI:
+
+<LoginUI>
+    name: 'first'
+
+    # orientation: 'vertical'
+    # padding: '2.04cm'
+    # spacint: '1.338cm'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '1cm'
+        size: root.width, root.height
+        Image:
+            source: "profile1.png"
+            size_hint_y: None
+            height: "2.465cm"
+
+        Label:
+            text: 'Sign In'
+            font_size: '1.05833cm'
+
+        TextInput:
+            multiline: False
+            hint_text: "E-mail"
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            padding: self.height/2 - self.font_size/2
+
+        TextInput:
+            multiline: False
+            hint_text: 'Password'
+            password: True
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+
+            padding: self.height/2 - self.font_size/2
+
+        Button:
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.549cm'
+            text: 'Log In'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+
+
+        
+        Label:
+            text: 'Not a user yet?'
+            font_size: '0.352778cm'
+            halign: 'left'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+
+        Button:
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.549cm'
+            text: 'Register'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "right"
+
+<RegisterUI>
+    name: 'second'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '1cm'
+        size: root.width, root.height
+        Image:
+            source: "profile1.png"
+            size_hint_y: None
+            height: "2.465cm"
+
+        Label:
+            text: 'Register'
+            font_size: '1.05833cm'
+
+        TextInput:
+            multiline: False
+            hint_text: "First Name"
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            padding: self.height/2 - self.font_size/2
+
+        TextInput:
+            multiline: False
+            hint_text: "Last Name"
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            padding: self.height/2 - self.font_size/2
+
+        TextInput:
+            multiline: False
+            hint_text: "Phone Number"
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            padding: self.height/2 - self.font_size/2
+
+        TextInput:
+            multiline: False
+            hint_text: "E-mail"
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            padding: self.height/2 - self.font_size/2
+
+        TextInput:
+            multiline: False
+            hint_text: 'Password'
+            password: True
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.50cm'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+
+            padding: self.height/2 - self.font_size/2
+
+        Button:
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.549cm'
+            text: 'Submit'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+
+
+        
+
+        Button:
+            size_hint: None, None
+            size_hint_x: .8
+            height: '1.549cm'
+            text: 'Back'
+            font_size: '0.635cm'
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "left"
+
+
+
